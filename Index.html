@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> absensi averos</title>
+    <link rel="stylesheet" href="absensi.css">
+</head>
+<body>
+     <div class="container">
+        <header>
+            <h1>Absensi Reserch SMA kls 10</h1>
+            <div class="date-display" id="currentDate">Senin, 1 Januari 2024</div>
+            <div class="date-navigation">
+                <button class="date-btn" id="prevDate">← Sebelumnya</button>
+                <input type="date" id="datePicker">
+                <button class="date-btn" id="nextDate">Berikutnya →</button>
+            </div>
+        </header>
+        
+        <div class="class-selector">
+            <button class="class-btn class-x1 active" data-class="X1">Kelas X1</button>
+            <button class="class-btn class-x2" data-class="X2">Kelas X2</button>
+            <button class="class-btn class-x3" data-class="X3">Kelas X3</button>
+        </div>
+        
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Cari nama siswa...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="present">Hadir</button>
+                <button class="filter-btn" data-filter="permit">Izin</button>
+                <button class="filter-btn" data-filter="absent">Alfa</button>
+            </div>
+        </div>
+        
+        <div class="summary">
+            <div class="summary-card">
+                <h3>Total Hadir</h3>
+                <div class="count present-count" id="presentCount">0</div>
+            </div>
+            <div class="summary-card">
+                <h3>Total Izin</h3>
+                <div class="count permit-count" id="permitCount">0</div>
+            </div>
+            <div class="summary-card">
+                <h3>Total Alfa</h3>
+                <div class="count absent-count" id="absentCount">0</div>
+            </div>
+        </div>
+        
+        <div class="attendance-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Siswa</th>
+                        <th>Kelas</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="attendanceTable">
+                    <!-- Data akan diisi oleh JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="actions">
+            <button class="action-btn save-btn" id="saveBtn">Simpan Absensi</button>
+            <button class="action-btn reset-btn" id="resetBtn">Reset Hari Ini</button>
+            <button class="action-btn data-folder-btn" id="dataFolderBtn">Folder Data</button>
+        </div>
+        
+        <footer>
+            &copy; 2024 Sistem Absensi Siswa. Data tersimpan secara lokal di browser Anda.
+        </footer>
+    </div>
+
+    <!-- Modal untuk Folder Data -->
+    <div class="modal" id="dataFolderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Folder Data Absensi</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Konten folder data akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+    <script src="absen.js">
+    </script>
+</body>
+</html>
